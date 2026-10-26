@@ -1,0 +1,43 @@
+# ==========================================
+# 自定义代理规则集 (AppleIntelligence.list)
+# 客户端绑定策略: 自动选择 / 节点选择 / PROXY
+# 官方参考: https://support.apple.com/en-us/101555
+# ==========================================
+
+# 1. 域名后缀匹配 (包含该域名及所有子域名)
+# --- Apple Intelligence & Siri 核心服务 ---
+DOMAIN-SUFFIX,pcc.apple.com
+DOMAIN-SUFFIX,guzzoni.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN-SUFFIX,apple-magellan.com
+DOMAIN-SUFFIX,api.apple-cloudkit.com
+DOMAIN-SUFFIX,gateway.apple.com
+DOMAIN-SUFFIX,gateway.icloud.com
+DOMAIN-SUFFIX,amp-api.apps.apple.com
+DOMAIN-SUFFIX,apps.mzstatic.com
+DOMAIN-SUFFIX,ls.apple.com
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
+
+# --- Apple Private Relay / Cloudflare / 边缘中继 ---
+DOMAIN-SUFFIX,apple-relay.apple.com
+DOMAIN-SUFFIX,apple-relay.cloudflare.com
+DOMAIN-SUFFIX,apple-relay.akamaized.net
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com
+DOMAIN-SUFFIX,cp4.cloudflare.com
+DOMAIN-SUFFIX,mask.icloud.com
+DOMAIN-SUFFIX,mask-h2.icloud.com
+DOMAIN-SUFFIX,mask-api.icloud.com
+DOMAIN-SUFFIX,mask.apple-dns.net
+DOMAIN-SUFFIX,mask-t.apple-dns.net
+DOMAIN-SUFFIX,mask-api.fe.apple-dns.net
+
+# 2. 精确域名匹配 (仅此单个完整域名走代理)
+# (当前规则集均已由后缀与关键词完整覆盖)
+
+# 3. 关键词匹配
+DOMAIN-KEYWORD,apple-intelligence
+DOMAIN-KEYWORD,apple-relay
+DOMAIN-KEYWORD,siri
+
+# 4. 远程固定 IP 网段
+# (DNS 解析直连或经代理转发)
